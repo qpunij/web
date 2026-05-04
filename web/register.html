@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>失物/招领登记</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        textarea {
+            height: 80px;
+        }
+
+        button {
+            padding: 10px 30px;
+            background-color: #667eea;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #5568d3;
+        }
+
+        .btn-group {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>📝 失物/招领登记</h1>
+
+    <form action="${pageContext.request.contextPath}/publishServlet" method="post">
+
+        <div class="form-group">
+            <label>登记类型：</label>
+            <label><input type="radio" name="type" value="lost" checked> 我丢失了物品</label>
+            <label><input type="radio" name="type" value="found"> 我捡到了物品</label>
+        </div>
+
+        <div class="form-group">
+            <label for="title">物品名称：</label>
+            <input type="text" id="title" name="title" required>
+        </div>
+
+        <div class="form-group">
+            <label for="category">物品分类：</label>
+            <select id="category" name="category" required>
+                <option value="">请选择</option>
+                <option value="phone">手机数码</option>
+                <option value="card">证件卡片</option>
+                <option value="bag">书包文具</option>
+                <option value="clothes">衣物鞋帽</option>
+                <option value="book">图书资料</option>
+                <option value="key">钥匙门卡</option>
+                <option value="other">其他</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="location">地点：</label>
+            <input type="text" id="location" name="location" required>
+        </div>
+
+        <div class="form-group">
+            <label for="date">日期：</label>
+            <input type="date" id="date" name="date" required>
+        </div>
+
+        <div class="form-group">
+            <label for="description">详细描述：</label>
+            <textarea id="description" name="description"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="contact">联系方式：</label>
+            <input type="text" id="contact" name="contact" required>
+        </div>
+
+        <div class="btn-group">
+            <button type="submit">提交</button>
+        </div>
+
+    </form>
+</body>
+</html>

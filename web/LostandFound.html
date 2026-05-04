@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>校园失物招领系统</title>
+    <link rel="stylesheet" href="css\lostandfound.css">
+</head>
+<body>
+    <!-- 头部导航 -->
+    <header>
+        <nav>
+            <div class="logo">
+                <span class="logo-icon">🔍</span>
+                <span>校园失物招领</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">首页</a></li>
+                <li><a href="register.html"target="_top">失物登记</a></li>
+                <li><a href="#found">招领信息</a></li>
+                <li><a href="#search">搜索</a></li>
+                <li><a href="#contact">联系我们</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 主要内容 -->
+    <div class="container">
+        <!-- 搜索和筛选区 -->
+        <div class="search-section">
+            <div class="search-bar">
+                <input type="text" class="search-input" placeholder="搜索物品名称、地点、描述...">
+                <button class="btn btn-primary">🔍 搜索</button>
+                <button class="btn btn-success">➕ 发布信息</button>
+            </div>
+            <div class="filter-tags">
+                <span class="tag active">全部</span>
+                <span class="tag">📱 手机数码</span>
+                <span class="tag">💳 证件卡片</span>
+                <span class="tag">🎒 书包文具</span>
+                <span class="tag">👕 衣物鞋帽</span>
+                <span class="tag">📚 图书资料</span>
+                <span class="tag">🔑 钥匙门卡</span>
+                <span class="tag">其他</span>
+            </div>
+        </div>
+
+        <!-- 分类卡片 -->
+        <div class="category-section">
+            <div class="category-card">
+                <div class="category-icon">📱</div>
+                <div class="category-title">手机数码</div>
+                <div class="category-count">23 条信息</div>
+            </div>
+            <div class="category-card">
+                <div class="category-icon">💳</div>
+                <div class="category-title">证件卡片</div>
+                <div class="category-count">15 条信息</div>
+            </div>
+            <div class="category-card">
+                <div class="category-icon">🎒</div>
+                <div class="category-title">书包文具</div>
+                <div class="category-count">18 条信息</div>
+            </div>
+            <div class="category-card">
+                <div class="category-icon">🔑</div>
+                <div class="category-title">钥匙门卡</div>
+                <div class="category-count">12 条信息</div>
+            </div>
+        </div>
+
+        <!-- 物品列表 -->
+        <div class="items-section">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span>📋</span>
+                    <span>最新信息</span>
+                </h2>
+                <div class="tab-buttons">
+                    <button class="tab-btn active">全部</button>
+                    <button class="tab-btn">失物</button>
+                    <button class="tab-btn">招领</button>
+                </div>
+            </div>
+
+            <div class="items-grid">
+                <!-- 物品卡片1 -->
+                <div class="item-card">
+                    <div class="item-image">📱</div>
+                    <div class="item-info">
+                        <span class="item-type lost">失物</span>
+                        <h3 class="item-title">iPhone 13 Pro</h3>
+                        <p class="item-detail">📍 地点：图书馆三楼</p>
+                        <p class="item-detail">📅 时间：2026-05-02</p>
+                        <p class="item-detail">📝 描述：深蓝色，有透明保护壳</p>
+                        <div class="item-footer">
+                            <span class="item-time">2小时前</span>
+                            <span class="item-status status-pending">寻找中</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 物品卡片2 -->
+                <div class="item-card">
+                    <div class="item-image">💳</div>
+                    <div class="item-info">
+                        <span class="item-type found">招领</span>
+                        <h3 class="item-title">学生证</h3>
+                        <p class="item-detail">📍 地点：食堂二楼</p>
+                        <p class="item-detail">📅 时间：2026-05-02</p>
+                        <p class="item-detail">📝 描述：张三，计算机学院</p>
+                        <div class="item-footer">
+                            <span class="item-time">5小时前</span>
+                            <span class="item-status status-pending">待认领</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 物品卡片3 -->
+                <div class="item-card">
+                    <div class="item-image">🎒</div>
+                    <div class="item-info">
+                        <span class="item-type lost">失物</span>
+                        <h3 class="item-title">黑色双肩包</h3>
+                        <p class="item-detail">📍 地点：教学楼A栋</p>
+                        <p class="item-detail">📅 时间：2026-05-01</p>
+                        <p class="item-detail">📝 描述：内有笔记本电脑和书籍</p>
+                        <div class="item-footer">
+                            <span class="item-time">1天前</span>
+                            <span class="item-status status-pending">寻找中</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 物品卡片4 -->
+                <div class="item-card">
+                    <div class="item-image">🔑</div>
+                    <div class="item-info">
+                        <span class="item-type found">招领</span>
+                        <h3 class="item-title">一串钥匙</h3>
+                        <p class="item-detail">📍 地点：操场看台</p>
+                        <p class="item-detail">📅 时间：2026-05-01</p>
+                        <p class="item-detail">📝 描述：有蓝色钥匙扣，3把钥匙</p>
+                        <div class="item-footer">
+                            <span class="item-time">1天前</span>
+                            <span class="item-status status-resolved">已认领</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 物品卡片5 -->
+                <div class="item-card">
+                    <div class="item-image">📚</div>
+                    <div class="item-info">
+                        <span class="item-type found">招领</span>
+                        <h3 class="item-title">高等数学教材</h3>
+                        <p class="item-detail">📍 地点：自习室B203</p>
+                        <p class="item-detail">📅 时间：2026-04-30</p>
+                        <p class="item-detail">📝 描述：第七版，有笔记标注</p>
+                        <div class="item-footer">
+                            <span class="item-time">2天前</span>
+                            <span class="item-status status-pending">待认领</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 物品卡片6 -->
+                <div class="item-card">
+                    <div class="item-image">👕</div>
+                    <div class="item-info">
+                        <span class="item-type lost">失物</span>
+                        <h3 class="item-title">白色运动鞋</h3>
+                        <p class="item-detail">📍 地点：体育馆</p>
+                        <p class="item-detail">📅 时间：2026-04-30</p>
+                        <p class="item-detail">📝 描述：Nike品牌，42码</p>
+                        <div class="item-footer">
+                            <span class="item-time">2天前</span>
+                            <span class="item-status status-pending">寻找中</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 浮动发布按钮 -->
+    <button class="float-button" title="发布信息">+</button>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#">关于我们</a>
+                <a href="#">使用帮助</a>
+                <a href="#">隐私政策</a>
+                <a href="#">联系方式</a>
+            </div>
+            <p>&copy; 2026 校园失物招领系统. All rights reserved.</p>
+            <p>让每一件失物都能找到主人 ❤️</p>
+        </div>
+    </footer>
+</body>
+</html>

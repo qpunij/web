@@ -1,0 +1,538 @@
+
+.box {
+    position: relative;
+    width: 250px;
+    height: 20px;
+    margin: 50px auto;
+    border: 2px solid #000;
+    background-color: #123;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+.tip {
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    transform: translateY(-5%);
+    margin-left: 40px;
+    display: none;
+    background: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 10;
+
+}
+.box:hover .tip {
+    display: block;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+    line-height: 1.7;
+    color: #333;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding-bottom: 60px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* 新增：漂浮装饰元素 */
+.floating-decor {
+    position: absolute;
+    top: 20px;
+    right: 20%;
+    font-size: 2rem;
+    animation: float 3s ease-in-out infinite;
+}
+@keyframes float {
+    0%,100% { transform: translateY(20PX); }
+    50% { transform: translatex(115px) rotate(760deg); }
+}
+
+/* 新增：打字机效果 */
+.typewriter {
+    overflow: hidden;
+    border-right: 3px solid #667eea;
+    white-space: nowrap;
+    margin: 20px 0;
+    letter-spacing: 0.1em;
+    animation:
+            typing 4s steps(40, end),
+            blink-caret 0.75s step-end infinite;
+    max-width: 100%;
+}
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #667eea }
+}
+
+/* 新增：标签云样式 */
+.tag-cloud {
+    margin: 30px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+.tag {
+    background: linear-gradient(135deg, #667eea33, #764ba233);
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+.tag:hover {
+    transform: scale(1.1) rotate(3deg);
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #fff;
+}
+
+/* 技能评分动效 */
+.rating {
+    transition: transform 0.3s ease;
+}
+tr:hover .rating {
+    transform: scale(1.1);
+}
+
+/* 进度标签样式 */
+.progress {
+    position: relative;
+    padding-left: 25px;
+}
+.progress::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+}
+.done::before {
+    background: #4CAF50;
+}
+.ongoing::before {
+    background: #FF9800;
+}
+.learning::before {
+    background: #2196F3;
+}
+.improving::before {
+    background: #9C27B0;
+}
+
+/* 资源卡片翻转效果 */
+.resource-card {
+    position: relative;
+    perspective: 1000px;
+    height: 50px;
+    margin-bottom: 20px;
+}
+.resource-card .card-front,
+.resource-card .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transition: transform 0.6s ease;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    border-radius: 8px;
+}
+.resource-card .card-front {
+    background: #f8f9ff;
+}
+.resource-card .card-back {
+    background: #667eea;
+    color: #fff;
+    transform: rotateY(180deg);
+}
+.resource-card:hover .card-front {
+    transform: rotateY(180deg);
+}
+.resource-card:hover .card-back {
+    transform: rotateY(0);
+}
+
+/* 呼吸动效 */
+.breathe {
+    animation: breathe 2s ease-in-out infinite;
+}
+@keyframes breathe {
+    0%,100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+/* 粒子背景 */
+.particle-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    background-image:
+            radial-gradient(#fff 2px, transparent 2px),
+            radial-gradient(#fff 1px, transparent 1px);
+    background-size: 50px 50px;
+    background-position: 0 0, 25px 25px;
+    opacity: 0.1;
+    animation: particle-move 20s linear infinite;
+}
+@keyframes particle-move {
+    0% { background-position: 0 0, 25px 25px; }
+    100% { background-position: 50px 50px, 75px 75px; }
+}
+
+/* 倒计时样式 */
+.countdown {
+    margin-top: 30px;
+    color: #667eea;
+    font-weight: 600;
+}
+.timer {
+    display: inline-block;
+    animation: timer-flip 1s steps(1) infinite;
+}
+@keyframes timer-flip {
+    0%,100% { content: '00:00'; }
+    25% { content: '00:01'; }
+    50% { content: '00:02'; }
+    75% { content: '00:03'; }
+}
+
+/* 回到顶部按钮 */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #667eea;
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+body:hover .back-to-top {
+    opacity: 1;
+}
+.back-to-top:hover {
+    transform: scale(1.1);
+    background: #764ba2;
+}
+
+/* 滚动提示 */
+.scroll-hint {
+    margin-top: 10px;
+    font-size: 0.8rem;
+    animation: fade 2s ease-in-out infinite alternate;
+}
+@keyframes fade {
+    0% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+header {
+    text-align: center;
+    padding: 50px 20px 30px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px 20px 0 0;
+    margin-bottom: 40px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+.profile {
+    margin-bottom: 20px;
+}
+
+.avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+header h1 {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 8px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+header p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* 主体内容 */
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section {
+    background: white;
+    margin-bottom: 30px;
+    padding: 35px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.section h2 {
+    color: #667eea;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #f0f0f0;
+    font-size: 1.8rem;
+    position: relative;
+}
+
+.section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: #667eea;
+    border-radius: 3px;
+}
+
+/* 表格样式 */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th,
+table td {
+    padding: 14px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+table th {
+    background-color: #f8f9ff;
+    font-weight: 600;
+    color: #555;
+    font-size: 1.1rem;
+}
+
+table tr:hover {
+    background-color: #f5f7ff;
+}
+
+table td {
+    font-size: 1.1rem;
+}
+
+/* 链接列表 */
+.link-list {
+    list-style: none;
+    margin-top: 15px;
+    padding: 0;
+}
+
+.link-list li {
+    margin-bottom: 12px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.link-list li a {
+    text-decoration: none;
+    color: #667eea;
+    font-size: 1.1rem;
+    transition: color 0.3s, text-decoration 0.3s;
+    display: block;
+}
+
+.link-list li a:hover {
+    color: #4a5fc8;
+    text-decoration: underline;
+}
+
+.link-list li a::before {
+    content: '🔗';
+    position: absolute;
+    left: 0;
+    font-size: 1.1rem;
+}
+
+/* 按钮组 */
+.call-to-action {
+    text-align: center;
+    position: relative;
+    padding: 35px;
+}
+
+.call-to-action p {
+    margin-bottom: 25px;
+    font-size: 1.2rem;
+    color: #555;
+    position: relative;
+    z-index: 1;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+}
+
+.btn {
+    padding: 14px 30px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: white;
+}
+
+.btn-github {
+    background: #333;
+    box-shadow: 0 4px 15px rgba(51, 51, 51, 0.3);
+}
+
+.btn-github:hover {
+    background: #111;
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(51, 51, 51, 0.5);
+}
+
+.btn-download {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-download:hover {
+    background: linear-gradient(135deg, #5a6fd8, #6c4196);
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+}
+
+/* 底部 */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    margin-top: 40px;
+    border-radius: 10px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    header p {
+        font-size: 1.1rem;
+    }
+    .avatar {
+        width: 120px;
+        height: 120px;
+    }
+    .section {
+        padding: 25px;
+    }
+    .section h2 {
+        font-size: 1.6rem;
+    }
+    .button-group {
+        flex-direction: column;
+        align-items: center;
+    }
+    .btn {
+        width: 200px;
+    }
+    table {
+        font-size: 0.9rem;
+    }
+    .typewriter {
+        animation: typing 6s steps(30, end), blink-caret 0.75s step-end infinite;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 40px 15px 20px;
+    }
+    .section {
+        padding: 20px;
+    }
+    table th,
+    table td {
+        padding: 10px;
+    }
+    .btn {
+        width: 180px;
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+    .floating-decor {
+        right: 10%;
+        font-size: 1.5rem;
+    }
+    .back-to-top {
+        width: 40px;
+        height: 40px;
+        bottom: 20px;
+        right: 20px;
+    }
+}

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的数字名片 | HTML + CSS 趣味版</title>
+    <link rel="stylesheet" href="css/2026.css">
+</head>
+<body>
+<!-- 头部 -->
+<header>
+    <div class="profile">
+        <!-- 悬浮提示盒子（保留并优化） -->
+        <div class="box">
+            👀 点我看看
+
+            <div class="tip">
+                <img src="屏幕截图 2026-03-09 204115.png" alt="趣味截图" />
+                <p style="color:black">这是隐藏的小彩蛋~</p>
+            </div>
+        </div>
+        <img src="" alt="我的头像" class="avatar">
+        <h1>李明</h1>
+        <p>前端初学者 · 热爱学习 · 每天进步一点点</p>
+        <!-- 新增：动态装饰元素 -->
+        <div class="floating-decor">✨</div>
+    </div>
+</header>
+
+<!-- 主体内容 -->
+<main>
+    <!-- 关于我（新增打字机效果） -->
+    <section class="section about">
+        <h2>🌟 关于我</h2>
+        <div class="typewriter">
+            <p>大家好！我是李明，一名正在学习前端开发的初学者。我热爱用代码创造美丽、实用的网页。这个页面是我用纯 HTML 和 CSS 独立完成的，没有使用任何 JavaScript，只为展示基础技术的无限可能！</p>
+        </div>
+        <!-- 新增：趣味标签云 -->
+        <div class="tag-cloud">
+            <span class="tag">HTML5</span>
+            <span class="tag">CSS3</span>
+            <span class="tag">💻</span>
+            <span class="tag">响应式</span>
+            <span class="tag">🎨</span>
+            <span class="tag">学习中</span>
+            <span class="tag">🚀</span>
+        </div>
+    </section>
+
+    <!-- 技能表格（新增hover动效） -->
+    <section class="section skills">
+        <h2>🔧 我的技能</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>技能</th>
+                <th>掌握程度</th>
+                <th>学习进度</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>HTML5</td>
+                <td class="rating">⭐⭐⭐⭐⭐</td>
+                <td class="progress done">已完成</td>
+            </tr>
+            <tr>
+                <td>CSS3</td>
+                <td class="rating">⭐⭐⭐⭐</td>
+                <td class="progress ongoing">进阶中</td>
+            </tr>
+            <tr>
+                <td>响应式设计</td>
+                <td class="rating">⭐⭐⭐</td>
+                <td class="progress learning">正在学习</td>
+            </tr>
+            <tr>
+                <td>语义化标签</td>
+                <td class="rating">⭐⭐⭐⭐</td>
+                <td class="progress done">已掌握</td>
+            </tr>
+            <tr>
+                <td>色彩与排版</td>
+                <td class="rating">⭐⭐⭐</td>
+                <td class="progress improving">持续提升</td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- 推荐资源（新增卡片hover翻转） -->
+    <section class="section resources">
+        <h2>📚 推荐学习资源</h2>
+        <ul class="link-list">
+            <li class="resource-card">
+                <div class="card-front">
+                    <a href="https://www.runoob.com/html/html-tutorial.html" target="_blank">菜鸟教程 - HTML</a>
+                </div>
+                <div class="card-back">
+                    基础入门超友好 📖
+                </div>
+            </li>
+            <li class="resource-card">
+                <div class="card-front">
+                    <a href="https://www.runoob.com/css/css-tutorial.html" target="_blank">菜鸟教程 - CSS</a>
+                </div>
+                <div class="card-back">
+                    <p>CSS属性全覆盖 🎨</p>
+                </div>
+            </li>
+            <li class="resource-card">
+                <div class="card-front">
+                    <a href="https://developer.mozilla.org/zh-CN/" target="_blank">MDN Web 文档（官方）</a>
+                </div>
+                <div class="card-back">
+                    <p>权威文档不迷路 📚</p>
+                </div>
+            </li>
+            <li class="resource-card">
+                <div class="card-front">
+                    <a href="https://www.freecodecamp.org/learn" target="_blank">freeCodeCamp（免费编程课程）</a>
+                </div>
+                <div class="card-back">
+                    <p>边学边练超高效 💪</p>
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    <!-- 行动按钮（新增呼吸动效+粒子背景） -->
+    <section class="section call-to-action">
+        <h2>🚀 想和我一起学前端？</h2>
+        <div class="particle-bg"></div>
+        <p>点击下面按钮，开启你的前端之旅！</p>
+        <div class="button-group">
+            <a href="https://github.com" class="btn btn-github breathe" target="_blank">GitHub探索</a>
+            <a href="#" class="btn btn-download breathe">下载我的简历（模拟）</a>
+        </div>
+        <!-- 新增：趣味倒计时（纯CSS） -->
+        <div class="countdown">
+            <p>距离下次学习前端还有 <span class="timer">00:00</span></p>
+        </div>
+    </section>
+</main>
+
+<!-- 底部（新增滚动提示） -->
+<footer>
+    <p>© 2025 李明的数字名片 · 纯 HTML + CSS 初学者作品</p>
+    <div class="scroll-hint">
+        <span>↑ 滚动回到顶部 ↑</span>
+    </div>
+</footer>
+
+<!-- 新增：回到顶部按钮（纯CSS触发） -->
+<a href="#" class="back-to-top">🔝</a>
+</body>
+</html>
