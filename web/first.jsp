@@ -15,11 +15,10 @@
 <body>
 <span id="random"></span>
 <a href="${pageContext.request.contextPath}/servlet5?fileName=0938.gif_wh860.gif">点击下载文件</a>
-<a href="${pageContext.request.contextPath}/servlet5?fileName=<%= URLEncoder.encode("navicat_113741-永久激活版.rar", "UTF-8")%>">点击下载压缩包</a>
+<a href="${pageContext.request.contextPath}/servlet5?fileName=<%= URLEncoder.encode("navicat.zip", "UTF-8")%>">点击下载压缩包</a>
 <script>
     document.getElementById("random").innerHTML = Math.floor(Math.random()*100);//随机数
 </script>
-<%           %>
-<%=%>
+
 </body>
 </html>

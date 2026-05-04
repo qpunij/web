@@ -27,7 +27,7 @@ response.setContentType("text/html;charset=UTF-8");
 
         response.setContentType(mimeType);
         response.addHeader("Content-Length", "" + new File(filepath).length());
-        String encodedFileName = URLEncoder.encode(filename, "UTF-8").replaceAll("\\+", "%20");//再编码
+        String encodedFileName = URLEncoder.encode(filename, "UTF-8").replaceAll("\\+", "%20");//再编码，URLEncoder.encode(filename, "UTF-8")告诉浏览器用这个给我编码
         response.addHeader("Content-Disposition", "attachment; filename*=UTF-8''" + encodedFileName);
 
         try (FileInputStream fis = new FileInputStream(filepath)){
