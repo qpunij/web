@@ -7,24 +7,82 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="Servlet2.javabean" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="Servlet2.VoteBean" %>
+<%@ page import="java.util.Map" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>编程语言投票</title>
+    <style>
+        body { font-family: Arial; max-width: 600px; margin: 50px auto; }
+        .option { margin: 10px 0; padding: 10px; background: #f0f0f0; }
+        input[type="radio"] { margin-right: 10px; }
+        button { padding: 10px 20px; background: #4CAF50; color: white; border: none; cursor: pointer; }
+        button:hover { background: #45a049; }
+    </style>
 </head>
 <body>
-<form>
-<form action="Servlet2/login.jsp" method="post">
-<input type="text" name="username" value="">
-<input type="password" name="password" value="">
-    <input type="submit" value="提交">提交
-</form>
-<%-- 加减--%>
-<jsp:useBean id="myBean" class="Servlet2.javabean" scope="page"/>
-<jsp:setProperty name="myBean" property="*"/>
-<jsp:getProperty name="myBean" property="password"/>
-<jsp:getProperty name="myBean" property="username"/>
+    <h1>🗳️ 最受欢迎的编程语言投票</h1>
+
+    <form method="post">
+        <div class="option">
+            <input type="radio" name="language" value="Java" id="java">
+            <label for="java">Java</label>
+        </div>
+        <div class="option">
+            <input type="radio" name="language" value="Python" id="python">
+            <label for="python">Python</label>
+        </div>
+        <div class="option">
+            <input type="radio" name="language" value="JavaScript" id="js">
+            <label for="js">JavaScript</label>
+        </div>
+        <div class="option">
+            <input type="radio" name="language" value="C++" id="cpp">
+            <label for="cpp">C++</label>
+        </div>
+
+        <button type="submit">提交投票</button>
+    </form>
+
+    <hr>
+
+    <%-- 处理投票并显示结果 --%>
+    <jsp:useBean id="voteBean" class="Servlet2.VoteBean" scope="application"/>
+    <jsp:setProperty name="voteBean" property="*" param="language"/>
+    <%
+        String selectedLanguage = request.getParameter("language");
+        if (selectedLanguage != null && !selectedLanguage.isEmpty()) {
+            voteBean.addVote(selectedLanguage);
+            out.println("<p style='color:green;'>✅ 投票成功！你投给了: " + selectedLanguage + "</p>");
+        }
+    %>
+
+    <h2>📊 当前投票结果：</h2>
+    <%
+        int total = voteBean.getTotalVotes();
+    %>
+    <p>总票数: <%= total %></p>
+
+    <%
+        for (Map.Entry<String, Integer> entry : voteBean.getAllVotes().entrySet()) {
+            double percentage = voteBean.getPercentage(entry.getKey());
+    %>
+        <div class="option">
+            <strong><%= entry.getKey() %></strong>:
+            <%= entry.getValue() %> 票
+            (<%= String.format("%.1f", percentage) %>%)
+            <div style="background:#ddd;height:20px;width:<%= percentage %>%;"></div>
+        </div>
+    <%
+        }
+    %>
+
+    <br>
+    <a href="vote.jsp">重新投票</a>
 </body>
 </html>
+
 <% int a = 10;
     int b = 20;
     Random c = new Random();%>
