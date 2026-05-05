@@ -10,6 +10,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="Servlet2.VoteBean" %>
 <%@ page import="java.util.Map" %>
+<%@ page  contentType="text/html; charset=UTF-8" language="java" errorPage="ert.html" %>
 <html>
 <head>
     <title>编程语言投票</title>
@@ -49,7 +50,7 @@
 
     <%-- 处理投票并显示结果 --%>
     <jsp:useBean id="voteBean" class="Servlet2.VoteBean" scope="application"/>
-    <jsp:setProperty name="voteBean" property="*" />
+    <jsp:setProperty name="voteBean" property="*" />//将表单数据设置到voteBean中
     <% if("reset".equals(request.getParameter("action"))) {
         voteBean.reset();
 

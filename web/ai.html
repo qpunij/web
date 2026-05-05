@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的 AI 工具箱</title>
+    <style>
+        :root {
+            --bg-color: #f5f7fa;
+            --card-bg: #ffffff;
+            --text-main: #333;
+            --text-sub: #666;
+            --accent: #4a90e2;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            color: var(--text-main);
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 20px;
+            text-decoration: none;
+            color: var(--text-main);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+
+        .icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .name {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .desc {
+            font-size: 0.85rem;
+            color: var(--text-sub);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🚀 AI 导航站</h1>
+
+    <div class="grid-container">
+        <!-- 在这里添加你的 AI 链接 -->
+
+        <a href="https://chat.openai.com" target="_blank" class="card">
+            <div class="icon">💬</div>
+            <div class="name">ChatGPT</div>
+            <div class="desc">OpenAI 语言模型</div>
+        </a>
+
+        <a href="https://claude.ai" target="_blank" class="card">
+            <div class="icon">🧠</div>
+            <div class="name">Claude</div>
+            <div class="desc">Anthropic 助手</div>
+        </a>
+
+        <a href="https://gemini.google.com" target="_blank" class="card">
+            <div class="icon">✨</div>
+            <div class="name">Gemini</div>
+            <div class="desc">Google 双子座</div>
+        </a>
+
+        <a href="https://kimi.moonshot.cn" target="_blank" class="card">
+            <div class="icon">🌙</div>
+            <div class="name">Kimi</div>
+            <div class="desc">月之暗面长文本</div>
+        </a>
+
+        <a href="https://tongyi.aliyun.com" target="_blank" class="card">
+            <div class="icon">👾</div>
+            <div class="name">通义千问</div>
+            <div class="desc">阿里大语言模型</div>
+        </a>
+        <a href="https://yiyan.baidu.com/" target="_blank" class="card">
+            <div class="icon"></div>
+            <div class="name">文心一言</div>
+            <div class="desc">百度</div>
+        </a>
+        <a href="https://yuanbao.tencent.com" target="_blank" class="card">
+            <div class="icon"></div>
+            <div class="name">腾讯元宝</div>
+            <div class="desc">腾讯</div>
+        </a>
+        <a href="https://chatglm.cn" target="_blank" class="card">
+            <div class="icon"></div>
+            <div class="name">智普清言</div>
+            <div class="desc">智普ai</div>
+        </a>
+        <a href="https://yuanbao.tencent.com" target="_blank" class="card">
+            <div class="icon"></div>
+            <div class="name">腾讯元宝</div>
+            <div class="desc">腾讯</div>
+        </a>
+        <!-- 复制上面的 <a> 标签块来添加新链接 -->
+
+    </div>
+
+</body>
+</html>
