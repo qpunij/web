@@ -49,11 +49,16 @@
 
     <%-- 处理投票并显示结果 --%>
     <jsp:useBean id="voteBean" class="Servlet2.VoteBean" scope="application"/>
-    <jsp:setProperty name="voteBean" property="*" param="language"/>
+    <jsp:setProperty name="voteBean" property="*" />
+    <% if("reset".equals(request.getParameter("action"))) {
+        voteBean.reset();
+
+
+    }%>
     <%
         String selectedLanguage = request.getParameter("language");
         if (selectedLanguage != null && !selectedLanguage.isEmpty()) {
-            voteBean.addVote(selectedLanguage);
+
             out.println("<p style='color:green;'>✅ 投票成功！你投给了: " + selectedLanguage + "</p>");
         }
     %>
@@ -65,7 +70,7 @@
     <p>总票数: <%= total %></p>
 
     <%
-        for (Map.Entry<String, Integer> entry : voteBean.getAllVotes().entrySet()) {
+        for (Map.Entry<String, Integer> entry : voteBean.getallVotes().entrySet()) {
             double percentage = voteBean.getPercentage(entry.getKey());
     %>
         <div class="option">
@@ -79,12 +84,9 @@
     %>
 
     <br>
-    <a href="vote.jsp">重新投票</a>
+    <a href="xyz.jsp?action=reset">重新投票</a>
 </body>
 </html>
 
-<% int a = 10;
-    int b = 20;
-    Random c = new Random();%>
-<%=a+b%>
-<%= c.nextInt(100)%>
+<% %>
+
