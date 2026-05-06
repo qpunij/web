@@ -50,7 +50,7 @@
 
     <%-- 处理投票并显示结果 --%>
     <jsp:useBean id="voteBean" class="Servlet2.VoteBean" scope="application"/>
-    <jsp:setProperty name="voteBean" property="*" />//将表单数据设置到voteBean中
+    <jsp:setProperty name="voteBean" property="*" />//将表单数据设置到voteBean中action中没有设置路径，提交请求默认返回给当前页面，此行获取表单参数
     <% if("reset".equals(request.getParameter("action"))) {
         voteBean.reset();
 
