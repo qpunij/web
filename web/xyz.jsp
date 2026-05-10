@@ -5,9 +5,9 @@
   Time: 11:19
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <%@ page import="Servlet2.javabean" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <%@ page import="Servlet2.VoteBean" %>
 <%@ page import="java.util.Map" %>
 <%@ page  contentType="text/html; charset=UTF-8" language="java" errorPage="ert.html" %>
@@ -53,8 +53,8 @@
     <jsp:setProperty name="voteBean" property="*" />//将表单数据设置到voteBean中action中没有设置路径，提交请求默认返回给当前页面，此行获取表单参数
     <% if("reset".equals(request.getParameter("action"))) {
         voteBean.reset();
-
-
+response.sendRedirect("xyz.jsp");
+return;
     }%>
     <%
         String selectedLanguage = request.getParameter("language");
