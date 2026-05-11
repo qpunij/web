@@ -9,8 +9,49 @@
 <html>
 <head>
     <title>Title</title>
+    <style>
+      #main{
+          width:500px;
+          height:auto;
+      }
+      #main div {
+          width:200px;
+          height:auto;
+      }
+      ul{
+         padding-top:1px;
+          padding-left:1px;
+          list-style: none;
+
+      }
+    </style>
 </head>
 <body>
+<%
+   if(session.getAttribute("userbean")==null){
+       %>
+<jsp:forward page="login.jsp"/>
+<%
+    return;
+    }
+%>
+<jsp:useBean id="userBean"class="userBean"scope="session"/>
+<div id="main">
+    <div id="welcome">恭喜你登录成功</div>
+
+    <hr/>
+        <div>你的信息</div>
+        <div>
+           <ul>
+               <li>您的姓名：${userBean.name}</li>
+               <li>您的邮箱：${userBean.eamil}</li>
+           </ul>
+        </div>
+    </div>
+
+
+</div>
+
 
 </body>
 </html>

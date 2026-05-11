@@ -44,33 +44,33 @@
     </style>
 </head>
 <body>
-<form action="login" method="post">
+<form action="${pageContext.request.contextPath}/ControllerServlet" method="post">
     <h3>您的注册登录</h3>
    <div id="outer">
        <div>
-           <div calss ="ch">名字：</div>
-           <div calss ="ip">
+           <div class ="ch">名字：</div>
+           <div class ="ip">
                <input type="text"name="name"value="${formBean.name}"/>
                <span>${formBean.errors.name}</span>
                </div>
        </div>
        <div>
-           <div calss ="ch">密码：</div>
-           <div calss ="ip">
+           <div class ="ch">密码：</div>
+           <div class ="ip">
                <input type="password"name="password"/>
                <span>${formBean.errors.password}</span>
                </div>
            </div>
        <div>
-           <div calss ="ch">确认密码：</div>
-           <div calss ="ip">
+           <div class ="ch">确认密码：</div>
+           <div class ="ip">
                <input type="password"name="password2"/>
                <span>${formBean.errors.password2}</span>
                </div>
        </div>
        <div>
-           <div calss ="ch">邮箱：</div>
-           <div calss ="ip">
+           <div class ="ch">邮箱：</div>
+           <div class ="ip">
                <input type="text"name="email"value="${formBean.email}"/>
                <span>${formBean.errors.email}</span>
                </div>

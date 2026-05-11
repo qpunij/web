@@ -1,5 +1,8 @@
 package ControllerServlet;
 
+import RegisterFormBean.RegisterFormBean;
+import UserBean.UserBean;
+import  DBUtil.DBUtil;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -26,18 +29,18 @@ public class ControllerServlet extends HttpServlet {
        formBean.setEmail(email);
        if(!formBean.validate()){
 request.setAttribute("formBean",formBean);
-request.getRequestDispatcher("/register.jsp").forward(request, response);
+request.getRequestDispatcher("/login.jsp").forward(request, response);
 return;
        }
        UserBean userBean = new UserBean();
        userBean.setName(name);
        userBean.setPassword(password);
        userBean.setEmail(email);
-       boolean b = DBUtil.getinstance().intsertUser(userBean);
+       boolean b = DBUtil.getInstance().intsertUser(userBean);
        if(!b){
 request.setAttribute("DBMes","你注册的用户存在");
 request.setAttribute("formBean",formBean);
-request.getRquestDispatcher("/login.jsp").foward(request,response);
+request.getRequestDispatcher("/login.jsp").forward(request,response);
 return;
        }
        response.getWriter().print("注册成功，3秒跳转");
