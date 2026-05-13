@@ -78,6 +78,7 @@
        <div id="bt">
            <input type="reset" value="重置"/>
            <input type="submit" value="注册"/>
+        <%= request.getAttribute("DBMes") %>
            </div>
    </div>
 </form>

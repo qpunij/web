@@ -28,14 +28,14 @@
 </head>
 <body>
 <%
-   if(session.getAttribute("userbean")==null){
+   if(session.getAttribute("userBean")==null){
        %>
 <jsp:forward page="login.jsp"/>
 <%
     return;
     }
 %>
-<jsp:useBean id="userBean"class="userBean"scope="session"/>
+<jsp:useBean id="userBean" class="UserBean.UserBean" scope="session"/>
 <div id="main">
     <div id="welcome">恭喜你登录成功</div>
 
@@ -44,7 +44,7 @@
         <div>
            <ul>
                <li>您的姓名：${userBean.name}</li>
-               <li>您的邮箱：${userBean.eamil}</li>
+               <li>您的邮箱：${userBean.email}</li>
            </ul>
         </div>
     </div>

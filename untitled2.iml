@@ -14,7 +14,7 @@
     </facet>
   </component>
   <component name="NewModuleRootManager">
-    <output url="file://$MODULE_DIR$/web/Web-INF/classes" />
+    <output url="file://$MODULE_DIR$/web/WEB-INF/classes" />
     <output-test url="file://$MODULE_DIR$/out/test/untitled2" />
     <exclude-output />
     <content url="file://$MODULE_DIR$">
@@ -52,5 +52,6 @@
       </library>
     </orderEntry>
     <orderEntry type="module" module-name="untitled" exported="" />
+    <orderEntry type="module" module-name="login" exported="" />
   </component>
 </module>

@@ -62,6 +62,7 @@ public class RegisterFormBean {
             flag = false;
         } else if (password.length() < 12 || password.length() > 16) {
             errors.put("password", "密码长度为12-16位");
+            flag = false;
         }
         if ((password != null) && !password2.trim().equals(password)) {
             errors.put("password2", "两次密码不一致");
@@ -72,7 +73,7 @@ public class RegisterFormBean {
             errors.put("email", "请输入邮箱");
             flag = false;
         } else if (!email.matches("[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\\.[a-zA-Z0-9_-]+)+")) {
-            errors.put("email", "请输入邮箱");
+            errors.put("email", "邮箱错误请输入邮箱");
             flag = false;
         }
         return flag;
