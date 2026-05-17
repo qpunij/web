@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<书架 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="schema.xsd">
+    <books>
+        <book>
+            <page>454554</page>
+        </book>
+    </books>
+</书架>

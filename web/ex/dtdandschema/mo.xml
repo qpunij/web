@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE 书架[
+        <!ELEMENT 书架 (books+)>
+        <!ELEMENT books (book+)>
+        <!ELEMENT book (topic+, author+)>
+        <!ELEMENT topic (#PCDATA)>
+        <!ELEMENT author (#PCDATA)>
+        ]>
+<书架>
+    <books>
+        <book>
+
+                <topic>Java</topic>
+                <author>张三</author>
+
+        </book>
+    </books>
+</书架>
